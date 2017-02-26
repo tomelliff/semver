@@ -5,8 +5,9 @@ import sys
 
 import semantic_version
 
-VERSION_FILE='version.py'
+VERSION_FILE = 'version.py'
 VERSION_TYPES = ['major', 'minor', 'patch']
+
 
 def get_version():
     if os.path.isfile(VERSION_FILE):
@@ -25,6 +26,7 @@ def get_version():
         version = initial_version
     return version
 
+
 def increment_version(version_type):
     version_number = get_version()
     version = semantic_version.Version(version_number, partial=True)
@@ -40,6 +42,7 @@ def increment_version(version_type):
 
     with open(VERSION_FILE, 'wb') as version_file:
         version_file.write("__version__ = '{}'\n".format(new_version))
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(

@@ -4,6 +4,7 @@ from mock import patch, mock_open
 
 import increment_version
 
+
 class TestGetVersion(unittest.TestCase):
     @patch('__builtin__.open', new_callable=mock_open, read_data='data')
     def test_reads_version_file(self, mock_file):
@@ -23,6 +24,7 @@ class TestGetVersion(unittest.TestCase):
     @patch('os.path.isfile', return_value=False)
     def test_handles_missing_version_file(self, mock_file):
         self.assertEqual(increment_version.get_version(), '0.0.0')
+
 
 @patch('__builtin__.open', create=True)
 @patch('increment_version.get_version', return_value='0.1.0')
