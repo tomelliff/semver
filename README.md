@@ -21,9 +21,3 @@ or
 ```sh
 python -m unittest discover -b
 ```
-
-### flake8 configuration
-
-```sh
-flake8 --exclude .git,*.pyc,env --max-line-length 90
-```
