@@ -1,5 +1,7 @@
 # SemVer
 
+[![Build Status](https://travis-ci.org/tomelliff/semver.svg?branch=master)](https://travis-ci.org/tomelliff/semver)
+
 Basic Python script for incrementing a project's version.
 
 ## Usage
